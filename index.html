@@ -11,8 +11,8 @@
   <!-- Google Fonts - Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- FontAwesome for Icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
   <style>
     body { font-family: 'Poppins', sans-serif; }
@@ -22,16 +22,6 @@
 </head>
 
 <body class="bg-white text-gray-800">
-
-<!-- Navbar -->
-<nav class="fixed top-6 right-6 z-50">
-  <ul class="flex space-x-6 text-sm font-semibold">
-    <li><a href="#home" class="hover:text-blue-500">Home</a></li>
-    <li><a href="#about" class="hover:text-blue-500">About</a></li>
-    <li><a href="#work" class="hover:text-blue-500">Work</a></li>
-    <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
-  </ul>
-</nav>
 
 <!-- Hero Section -->
 <section id="home" class="min-h-screen flex flex-col justify-center px-4">
@@ -46,19 +36,24 @@
 
       <!-- Social Icons -->
       <div class="flex items-center justify-center md:justify-start space-x-4 mt-4">
-        <a href="https://github.com/jayWaikato/" class="border rounded-lg p-3 bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
-          <i class="fas fa-envelope">GitHub</i>
+        <!-- Email -->
+        <a href="#" class="border p-3 rounded-lg bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
+          <i class="fas fa-envelope"></i>
         </a>
-        <a href="#" class="border rounded-lg p-3 bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
+        <!-- Phone -->
+        <a href="#" class="border p-3 rounded-lg bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
           <i class="fas fa-phone"></i>
         </a>
-        <a href="#" class="border rounded-lg p-3 bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
+        <!-- LinkedIn (special background) -->
+        <a href="#" class="border p-3 rounded-lg bg-gray-600 text-white hover:bg-blue-500">
           <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="#" class="border rounded-lg p-3 bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
+        <!-- X (Twitter) -->
+        <a href="#" class="border p-3 rounded-lg bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
           <i class="fab fa-x-twitter"></i>
         </a>
-        <a href="#" class="border rounded-lg p-3 bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
+        <!-- GitHub -->
+        <a href="#" class="border p-3 rounded-lg bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
           <i class="fab fa-github"></i>
         </a>
       </div>
@@ -70,29 +65,6 @@
     </div>
   </div>
 </section>
-
-<!-- About Section -->
-<section id="about" class="min-h-screen flex flex-col items-center justify-center px-6 fade-in">
-  <h2 class="text-3xl font-bold mb-6">About Me</h2>
-  <p class="max-w-2xl text-center text-gray-600">I'm a passionate software engineer who loves building mobile apps and web experiences. I focus on creating clean, efficient, and user-friendly solutions for modern needs.</p>
-</section>
-
-<!-- Work Section -->
-<section id="work" class="min-h-screen flex flex-col items-center justify-center px-6 fade-in">
-  <h2 class="text-3xl font-bold mb-6">Work</h2>
-  <p class="max-w-2xl text-center text-gray-600">Here are some of the projects I've worked on. (You can add your real project links and cards here.)</p>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="min-h-screen flex flex-col items-center justify-center px-6 fade-in">
-  <h2 class="text-3xl font-bold mb-6">Contact</h2>
-  <p class="max-w-2xl text-center text-gray-600">Feel free to reach out to me at your-email@example.com or connect with me on LinkedIn!</p>
-</section>
-
-<!-- Footer -->
-<footer class="text-center text-xs text-gray-400 p-4">
-  &copy; 2025 Shashwot Risal. All rights reserved.
-</footer>
 
 <!-- Fade-in Scroll Animation -->
 <script>
