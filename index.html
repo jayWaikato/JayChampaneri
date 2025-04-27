@@ -2,160 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shashwot Rijal - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts - Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: 'Roboto', sans-serif;
-      background: #ffffff;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
     }
-
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
-
-    header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    .typing {
-      font-size: 1.2rem;
-      color: #666;
-      height: 30px;
-    }
-
-    nav {
-      position: fixed;
-      top: 20px;
-      right: 30px;
-    }
-
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-
-    section {
-      min-height: 100vh;
-      padding: 60px 20px;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    p {
-      max-width: 800px;
-      margin: 0 auto 30px;
-      line-height: 1.6;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #aaa;
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
-<body>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
-</nav>
+<body class="bg-white text-gray-800">
 
-<header>
-  <img src="https://via.placeholder.com/150" alt="Profile Photo">
-  <h1>Shashwot Rijal</h1>
-  <div class="typing" id="typing"></div>
-</header>
+  <!-- Navbar -->
+  <nav class="fixed top-6 right-6 z-50">
+    <ul class="flex space-x-6 text-sm font-semibold">
+      <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+      <li><a href="#about" class="hover:text-blue-500">About</a></li>
+      <li><a href="#work" class="hover:text-blue-500">Work</a></li>
+      <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+    </ul>
+  </nav>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>I am a software engineer passionate about mobile app development and web technologies. I create intuitive and dynamic user experiences.</p>
-</section>
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+    <img src="https://via.placeholder.com/150" alt="Profile" class="w-36 h-36 rounded-full mb-6">
+    <h1 class="text-3xl md:text-5xl font-bold mb-2">Your Name</h1>
+    <p class="text-xl md:text-2xl text-gray-600" id="typing"></p>
+  </section>
 
-<section id="experience">
-  <h2>Experience</h2>
-  <p>Over 3+ years of experience in developing mobile apps and web applications, collaborating with teams to deliver top-notch solutions.</p>
-</section>
+  <!-- About Section -->
+  <section id="about" class="min-h-screen flex flex-col items-center justify-center px-6 fade-in">
+    <h2 class="text-3xl font-bold mb-6">About Me</h2>
+    <p class="max-w-2xl text-center text-gray-600">I'm a passionate software engineer who loves building mobile apps and web experiences. I focus on creating clean, efficient, and user-friendly solutions for modern needs.</p>
+  </section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <p>React Native, Flutter, JavaScript, Python, Node.js, UI/UX Design.</p>
-</section>
+  <!-- Work Section -->
+  <section id="work" class="min-h-screen flex flex-col items-center justify-center px-6 fade-in">
+    <h2 class="text-3xl font-bold mb-6">Work</h2>
+    <p class="max-w-2xl text-center text-gray-600">Here are some of the projects I've worked on. (You can add your real project links and cards here.)</p>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: example@email.com | Phone: +123 456 7890</p>
-</section>
+  <!-- Contact Section -->
+  <section id="contact" class="min-h-screen flex flex-col items-center justify-center px-6 fade-in">
+    <h2 class="text-3xl font-bold mb-6">Contact</h2>
+    <p class="max-w-2xl text-center text-gray-600">Feel free to reach out to me at your-email@example.com or connect with me on LinkedIn!</p>
+  </section>
 
-<footer>
-  &copy; 2025 Shashwot Rijal. All Rights Reserved.
-</footer>
+  <!-- Footer -->
+  <footer class="text-center text-xs text-gray-400 p-4">
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
 
-<script>
-const typingElement = document.getElementById('typing');
-const words = ['Software Engineer', 'Mobile Developer', 'Web Enthusiast'];
-let wordIndex = 0;
-let charIndex = 0;
-let typingSpeed = 150;
+  <!-- Typing and Scroll Script -->
+  <script>
+    // Typing Animation
+    const typingTexts = ["I build mobile applications.", "I love clean design.", "I create web experiences."];
+    let typingIndex = 0;
+    let charIndex = 0;
+    const typingElement = document.getElementById('typing');
 
-function type() {
-  if (charIndex < words[wordIndex].length) {
-    typingElement.textContent += words[wordIndex][charIndex];
-    charIndex++;
-    setTimeout(type, typingSpeed);
-  } else {
-    setTimeout(erase, 1000);
-  }
-}
+    function typeText() {
+      if (charIndex < typingTexts[typingIndex].length) {
+        typingElement.textContent += typingTexts[typingIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeText, 100);
+      } else {
+        setTimeout(eraseText, 2000);
+      }
+    }
 
-function erase() {
-  if (charIndex > 0) {
-    typingElement.textContent = words[wordIndex].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(erase, typingSpeed);
-  } else {
-    wordIndex = (wordIndex + 1) % words.length;
-    setTimeout(type, typingSpeed);
-  }
-}
+    function eraseText() {
+      if (charIndex > 0) {
+        typingElement.textContent = typingTexts[typingIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseText, 50);
+      } else {
+        typingIndex = (typingIndex + 1) % typingTexts.length;
+        setTimeout(typeText, 500);
+      }
+    }
 
-document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(type, 1000);
-});
-</script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typingTexts.length) typeText();
+    });
+
+    // Scroll Fade In
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
