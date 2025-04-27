@@ -309,7 +309,10 @@ document.querySelectorAll('.fade-in').forEach(section => {
 
 </div>
 <!-- Cmd + K bottom bar -->
-<div id="openPaletteHint" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white border rounded-full px-4 py-2 shadow text-sm text-gray-600 cursor-pointer hover:bg-gray-100 z-50">
+<!-- <div id="openPaletteHint" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white border rounded-full px-4 py-2 shadow text-sm text-gray-600 cursor-pointer hover:bg-gray-100 z-50"> -->
+ <div id="openPaletteHint"
+     class="fixed inset-x-0 bottom-4 flex justify-center z-50 pointer-events-auto">
+   <div class="bg-white border rounded-full px-4 py-2 shadow text-sm text-gray-600 hover:bg-gray-100 cursor-pointer">
   Press <kbd class="px-2 py-1 rounded bg-gray-100 border"data-key="modifier">Cmd</kbd> + <kbd class="px-2 py-1 rounded bg-gray-100 border">K</kbd> to open the command palette.
 </div>
 
