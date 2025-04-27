@@ -21,10 +21,10 @@
   </style>
 </head>
 
-<body class="bg-white font-mono text-gray-500 text-sm">
-<div class="max-w-4xl mx-auto px-8">
+<body class="bg-white text-gray-800">
+<div class="max-w-4xl mx-auto px-10">
    <!-- Hero Section -->
-<section id="home" class="min-h-screen flex items-center text-3xl font-semibold">
+<section id="home" class="min-h-screen flex items-center">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     
     <!-- Left Side (Text Info) -->
@@ -36,36 +36,13 @@
       </div>
       <!-- Social Links -->
       <div class="flex gap-3 mt-4">
-        <div class="flex items-center justify-center md:justify-start space-x-4 mt-4">
-        <!-- Email -->
-        <a href="#" class="border p-3 rounded-lg bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <!-- Phone -->
-        <a href="#" class="border w-10 h-10 flex items-center justify-center rounded-lg bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
-          <i class="fas fa-phone"</i>
-        </a>
-        <!-- LinkedIn (special background) -->
-        <a href="#" class="border w-10 h-10 flex items-center justify-center rounded-lg bg-gray-600 text-white hover:bg-blue-500">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <!-- X (Twitter) -->
-        <a href="#" class="border p-3 rounded-lg bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
-          <i class="fab fa-x-twitter"></i>
-        </a>
-        <!-- GitHub -->
-        <a href="#" class="border p-3 rounded-lg bg-white text-gray-600 hover:text-blue-500 hover:bg-gray-100">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
         <!-- social icons -->
-        
       </div>
     </div>
 
     <!-- Right Side (Profile Picture) -->
     <div class="flex justify-center md:justify-end">
-      <img src="*" alt="Profile" class="rounded-xl w-48 h-48 object-cover">
+      <img src="your-profile.jpg" alt="Profile" class="rounded-xl w-48 h-48 object-cover">
     </div>
 
   </div>
@@ -92,11 +69,11 @@
 
 <!-- Projects Section -->
 <section id="projects" class="min-h-screen px-8 py-16">
-  <h2 class="text-center text-2xl font-bold mb-6">Projects</h2>
+  <h2 class="text-4xl font-bold mb-10 text-center">Projects</h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+  <div class="grid md:grid-cols-3 gap-8">
     <!-- Project 1 -->
-    <div class="border rounded-md p-5 text-gray-700 text-sm">
+    <div class="border rounded-xl p-6 flex flex-col justify-between">
       <div>
         <h3 class="text-xl font-semibold mb-2">
           High Availability with HAProxy <span class="text-green-500 text-2xl leading-none align-top">•</span>
@@ -197,11 +174,11 @@
 
 <!-- Skills Section -->
 <section id="skills" class="min-h-[50vh] px-8 py-16">
-  <h2 class="text-center text-2xl font-bold mb-6">Skills</h2>
+  <h2 class="text-4xl font-bold mb-10 text-center">Skills</h2>
 
   <div class="flex flex-wrap justify-center gap-4">
     <!-- Skill -->
-    <span class="flex items-center gap-2 px-2 py-1 text-xs bg-gray-100 rounded">
+    <span class="flex items-center gap-2 bg-gray-100 px-3 py-2 rounded-full text-sm">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" class="w-5 h-5">
       AWS
     </span>
