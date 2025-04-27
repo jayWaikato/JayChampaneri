@@ -19,6 +19,36 @@
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
+
+  <style>
+  /* -- hide all UI bits when printing -- */
+  @media print {
+    /* hide palettes, hints, nav bars, scrollbars… */
+    #openPaletteHint,
+    #commandPalette,
+    /* if you ever wrap non-content in .no-print */
+    .no-print {
+      display: none !important;
+    }
+
+    /* make the page background pure white */
+    body, .bg-gray-50 {
+      background-color: #fff !important;
+    }
+
+    /* use full container width when printing */
+    .max-w-4xl {
+      max-width: 100% !important;
+    }
+
+    /* you can force page breaks after sections if needed */
+    section {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+  }
+</style>
+
 </head>
 
 <body class="text-gray-800 bg-gray-50 flex items-center justify-center min-h-screen p-6">
@@ -486,9 +516,10 @@ document.querySelectorAll('.fade-in').forEach(section => {
       showPalette();
     } else if (event.key === 'Escape') {
       hidePalette();
-    } else if (event.ctrlKey && !event.shiftKey && event.key.toLowerCase() === 'p') {
+    } else if ((event.ctrlKey||e.metaKey) && event.key.toLowerCase() === 'p'){
       event.preventDefault();
       window.print();
+      return;
     } else if (event.key === 'ArrowDown') {
       currentCommandIndex = (currentCommandIndex + 1) % commandItems.length;
       highlightCommand(currentCommandIndex);
