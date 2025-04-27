@@ -336,6 +336,8 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-in').forEach(section => {
   observer.observe(section);
 });
+
+
 </script>
 <!-- Cmd + K bottom bar -->
 <div id="openPaletteHint" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white border rounded-full px-4 py-2 shadow text-sm text-gray-600 cursor-pointer hover:bg-gray-100 z-50">
@@ -484,6 +486,9 @@ document.querySelectorAll('.fade-in').forEach(section => {
       showPalette();
     } else if (event.key === 'Escape') {
       hidePalette();
+    } else if (event.ctrlKey && !event.shiftKey && event.key.toLowerCase() === 'p') {
+      event.preventDefault();
+      window.print();
     } else if (event.key === 'ArrowDown') {
       currentCommandIndex = (currentCommandIndex + 1) % commandItems.length;
       highlightCommand(currentCommandIndex);
