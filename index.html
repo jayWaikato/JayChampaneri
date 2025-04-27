@@ -3,73 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JayWaikato | Professional Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Shashwot Rijal - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #ffffff;
+      color: #333;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .typing {
+      font-size: 1.2rem;
+      color: #666;
+      height: 30px;
+    }
+
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-  <header id="hero">
-    <h1>Jay Champaneri</h1>
-    <p>Cybersecurity Analyst | Network Security Enthusiast</p>
-    <a href="assets/Jay-Champaneri-linkedin-CV.pdf" download class="btn">Download CV</a>
-  </header>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Cybersecurity Analyst with 2.5+ years of experience specializing in threat detection, vulnerability assessment, and incident response. Proficient in Firewall Configuration, SIEM Tools, Risk Management, and Incident Handling. Passionate about continuously learning and enhancing organizational security posture.</p>
-      <a href="assets/Jay-Champaneri-linkedin-CV.pdf" download class="btn">Download CV</a>
-    </section>
+<nav>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Cybersecurity Operations</li>
-        <li>Firewall Configuration</li>
-        <li>SIEM Tools (Microsoft Sentinel, Defender, Azure)</li>
-        <li>Python, Shell scripting, C, C++</li>
-        <li>Network Troubleshooting (Routers, Switches, Access Points)</li>
-        <li>Threat & Malware Analysis</li>
-        <li>Linux & Windows environments</li>
-      </ul>
-    </section>
+<header>
+  <img src="https://via.placeholder.com/150" alt="Profile Photo">
+  <h1>Shashwot Rijal</h1>
+  <div class="typing" id="typing"></div>
+</header>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-card">
-        <h3>CPU Utilization Collector</h3>
-        <p>Automates CPU usage collection from network devices and visualizes it in real-time.</p>
-        <a href="https://github.com/JayWaikato/cpu-utilization-collector" target="_blank">View on GitHub</a>
-      </div>
-    </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a software engineer passionate about mobile app development and web technologies. I create intuitive and dynamic user experiences.</p>
+</section>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <p><strong>Alterego Technology</strong> — Network Security Engineer (Sep 2023 - Jun 2024)</p>
-      <p><strong>Einfochips</strong> — Engineer (Jan 2022 - Jun 2023)</p>
-    </section>
+<section id="experience">
+  <h2>Experience</h2>
+  <p>Over 3+ years of experience in developing mobile apps and web applications, collaborating with teams to deliver top-notch solutions.</p>
+</section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <p><strong>University of Waikato</strong> — Masters of Information Technology</p>
-      <p><strong>L.D. College of Engineering</strong> — Bachelors of Engineering (Electronics and Communication)</p>
-    </section>
+<section id="skills">
+  <h2>Skills</h2>
+  <p>React Native, Flutter, JavaScript, Python, Node.js, UI/UX Design.</p>
+</section>
 
-    <section id="achievements">
-      <h2>Achievements</h2>
-      <ul>
-        <li>Rocket Building - Featured in newspapers, recognized by Gujarat Technological University</li>
-        <li>Telescope Building - Presented at World Space Week event</li>
-      </ul>
-    </section>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: example@email.com | Phone: +123 456 7890</p>
+</section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:jaychampaneri1234@gmail.com">jaychampaneri1234@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/jay-champaneri-secures/" target="_blank">jay-champaneri-secures</a></p>
-      <p>GitHub: <a href="https://github.com/JayWaikato" target="_blank">JayWaikato</a></p>
-    </section>
-  </main>
+<footer>
+  &copy; 2025 Shashwot Rijal. All Rights Reserved.
+</footer>
 
-  <script src="js/main.js"></script>
+<script>
+const typingElement = document.getElementById('typing');
+const words = ['Software Engineer', 'Mobile Developer', 'Web Enthusiast'];
+let wordIndex = 0;
+let charIndex = 0;
+let typingSpeed = 150;
+
+function type() {
+  if (charIndex < words[wordIndex].length) {
+    typingElement.textContent += words[wordIndex][charIndex];
+    charIndex++;
+    setTimeout(type, typingSpeed);
+  } else {
+    setTimeout(erase, 1000);
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    typingElement.textContent = words[wordIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, typingSpeed);
+  } else {
+    wordIndex = (wordIndex + 1) % words.length;
+    setTimeout(type, typingSpeed);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(type, 1000);
+});
+</script>
+
 </body>
 </html>
