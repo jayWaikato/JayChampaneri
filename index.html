@@ -389,28 +389,32 @@ document.querySelectorAll('.fade-in').forEach(section => {
 <script>
   const palette = document.getElementById('commandPalette');
   const hintButton = document.getElementById('openPaletteHint');
-  const commands = Array.from(document.querySelectorAll('.command-item'));
+  const searchInput = document.getElementById('searchInput');
+  const commandItems = Array.from(document.querySelectorAll('.command-item'));
   let currentCommandIndex = 0;
 
   function showPalette() {
     palette.classList.remove('hidden');
     highlightCommand(currentCommandIndex);
+    searchInput.focus(); // focus cursor in search box
   }
 
   function hidePalette() {
     palette.classList.add('hidden');
     removeHighlight();
+    searchInput.value = ''; // clear search input when closing
+    commandItems.forEach(item => item.style.display = ''); // show all again
   }
 
   function highlightCommand(index) {
-    commands.forEach(cmd => cmd.classList.remove('bg-gray-100'));
-    if (commands[index]) {
-      commands[index].classList.add('bg-gray-100');
+    commandItems.forEach(cmd => cmd.classList.remove('bg-gray-100'));
+    if (commandItems[index]) {
+      commandItems[index].classList.add('bg-gray-100');
     }
   }
 
   function removeHighlight() {
-    commands.forEach(cmd => cmd.classList.remove('bg-gray-100'));
+    commandItems.forEach(cmd => cmd.classList.remove('bg-gray-100'));
   }
 
   function executeCommand(index) {
@@ -431,6 +435,7 @@ document.querySelectorAll('.fade-in').forEach(section => {
     hidePalette();
   }
 
+  // KEYBOARD Shortcuts
   document.addEventListener('keydown', function(event) {
     if (event.ctrlKey && event.key.toLowerCase() === 'k') {
       event.preventDefault();
@@ -438,23 +443,27 @@ document.querySelectorAll('.fade-in').forEach(section => {
     } else if (event.key === 'Escape') {
       hidePalette();
     } else if (event.key === 'ArrowDown') {
-      currentCommandIndex = (currentCommandIndex + 1) % commands.length;
+      currentCommandIndex = (currentCommandIndex + 1) % commandItems.length;
       highlightCommand(currentCommandIndex);
     } else if (event.key === 'ArrowUp') {
-      currentCommandIndex = (currentCommandIndex - 1 + commands.length) % commands.length;
+      currentCommandIndex = (currentCommandIndex - 1 + commandItems.length) % commandItems.length;
       highlightCommand(currentCommandIndex);
     } else if (event.key === 'Enter') {
       executeCommand(currentCommandIndex);
     }
   });
 
+  // OPEN on click of hint button
   hintButton.addEventListener('click', showPalette);
-</script>
 
-<script>
-  const searchInput = document.getElementById('searchInput');
-  const commandItems = document.querySelectorAll('.command-item');
+  // CLICK on a command
+  commandItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      executeCommand(index);
+    });
+  });
 
+  // LIVE SEARCH
   searchInput.addEventListener('keyup', function() {
     const searchTerm = this.value.toLowerCase();
     commandItems.forEach(item => {
