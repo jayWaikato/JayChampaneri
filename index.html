@@ -299,6 +299,137 @@ document.querySelectorAll('.fade-in').forEach(section => {
   observer.observe(section);
 });
 </script>
+<!-- Cmd + K bottom bar -->
+<div id="openPaletteHint" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white border rounded-full px-4 py-2 shadow text-sm text-gray-600 cursor-pointer hover:bg-gray-100 z-50">
+  Press <kbd class="px-2 py-1 rounded bg-gray-100 border">Cmd</kbd> + <kbd class="px-2 py-1 rounded bg-gray-100 border">K</kbd> to open the command palette.
+</div>
+
+<!-- Command Palette Popup -->
+<div id="commandPalette" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 transition-opacity duration-300">
+  <div class="bg-white w-full max-w-md p-6 rounded-lg shadow-lg">
+    <h2 class="text-lg font-semibold mb-4">Search Command</h2>
+
+    <div id="commandList" class="space-y-4">
+      <!-- Commands -->
+      <div class="command-item flex items-center justify-between p-2 rounded cursor-pointer">
+        <div class="flex items-center gap-2">
+          <i class="fas fa-print"></i>
+          <span>Print</span>
+        </div>
+        <div class="flex gap-1">
+          <kbd class="px-2 py-1 rounded bg-gray-100 border">Ctrl</kbd>
+          <kbd class="px-2 py-1 rounded bg-gray-100 border">P</kbd>
+        </div>
+      </div>
+
+      <div class="command-item flex items-center justify-between p-2 rounded cursor-pointer">
+        <div class="flex items-center gap-2">
+          <i class="fab fa-linkedin-in"></i>
+          <span>Visit LinkedIn</span>
+        </div>
+        <div class="flex gap-1">
+          <kbd class="px-2 py-1 rounded bg-gray-100 border">Ctrl</kbd>
+          <kbd class="px-2 py-1 rounded bg-gray-100 border">L</kbd>
+        </div>
+      </div>
+
+      <div class="command-item flex items-center justify-between p-2 rounded cursor-pointer">
+        <div class="flex items-center gap-2">
+          <i class="fab fa-x-twitter"></i>
+          <span>Visit X</span>
+        </div>
+        <div class="flex gap-1">
+          <kbd class="px-2 py-1 rounded bg-gray-100 border">Ctrl</kbd>
+          <kbd class="px-2 py-1 rounded bg-gray-100 border">X</kbd>
+        </div>
+      </div>
+
+      <div class="command-item flex items-center justify-between p-2 rounded cursor-pointer">
+        <div class="flex items-center gap-2">
+          <i class="fab fa-github"></i>
+          <span>Visit GitHub</span>
+        </div>
+        <div class="flex gap-1">
+          <kbd class="px-2 py-1 rounded bg-gray-100 border">Ctrl</kbd>
+          <kbd class="px-2 py-1 rounded bg-gray-100 border">G</kbd>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer hints -->
+    <div class="text-xs text-gray-400 mt-6 border-t pt-3 flex justify-between">
+      <span>↵ to select</span>
+      <span>↑ ↓ to navigate</span>
+      <span>Ctrl + K / Escape to close</span>
+    </div>
+  </div>
+</div>
+
+<!-- Command Palette Script -->
+<script>
+  const palette = document.getElementById('commandPalette');
+  const hintButton = document.getElementById('openPaletteHint');
+  const commands = Array.from(document.querySelectorAll('.command-item'));
+  let currentCommandIndex = 0;
+
+  function showPalette() {
+    palette.classList.remove('hidden');
+    highlightCommand(currentCommandIndex);
+  }
+
+  function hidePalette() {
+    palette.classList.add('hidden');
+    removeHighlight();
+  }
+
+  function highlightCommand(index) {
+    commands.forEach(cmd => cmd.classList.remove('bg-gray-100'));
+    if (commands[index]) {
+      commands[index].classList.add('bg-gray-100');
+    }
+  }
+
+  function removeHighlight() {
+    commands.forEach(cmd => cmd.classList.remove('bg-gray-100'));
+  }
+
+  function executeCommand(index) {
+    switch (index) {
+      case 0:
+        window.print();
+        break;
+      case 1:
+        window.open('https://www.linkedin.com/', '_blank');
+        break;
+      case 2:
+        window.open('https://twitter.com/', '_blank');
+        break;
+      case 3:
+        window.open('https://github.com/', '_blank');
+        break;
+    }
+    hidePalette();
+  }
+
+  document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key.toLowerCase() === 'k') {
+      event.preventDefault();
+      showPalette();
+    } else if (event.key === 'Escape') {
+      hidePalette();
+    } else if (event.key === 'ArrowDown') {
+      currentCommandIndex = (currentCommandIndex + 1) % commands.length;
+      highlightCommand(currentCommandIndex);
+    } else if (event.key === 'ArrowUp') {
+      currentCommandIndex = (currentCommandIndex - 1 + commands.length) % commands.length;
+      highlightCommand(currentCommandIndex);
+    } else if (event.key === 'Enter') {
+      executeCommand(currentCommandIndex);
+    }
+  });
+
+  hintButton.addEventListener('click', showPalette);
+</script>
 
 </body>
 </html>
