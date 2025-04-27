@@ -95,109 +95,69 @@
   </section>
 
 <!-- Projects Section -->
-<section id="projects" class="min-h-screen px-8 py-16">
-  <h2 class="text-4xl font-bold mb-10 text-center">Projects</h2>
+<!-- make sure you still have Tailwind + FontAwesome loaded -->
+<section id="projects" class="px-8 py-16 font-mono text-gray-800 text-sm">
+  <h2 class="text-3xl font-bold mb-8">Projects</h2>
 
-  <div class="grid md:grid-cols-3 gap-8 grid md:grid-cols-3 gap-8 justify-items-center">
-    <!-- Project 1 -->
-    <div class="w-full max-w-xs border rounded-xl p-6 flex flex-col justify-between">
-      <div>
-        <h3 class="text-xl font-semibold mb-2">
-          High Availability with HAProxy <span class="text-green-500 text-2xl leading-none align-top">•</span>
-        </h3>
-        <p class="text-gray-600 mb-4">Ensuring Fault Tolerance and Redundancy in Your Infrastructure</p>
-      </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    
+    <!-- Card 1 -->
+    <div class="border border-gray-200 rounded-xl p-5">
+      <h3 class="text-lg font-semibold mb-2">
+        High Availability with HAProxy 
+        <span class="text-green-500">•</span>
+      </h3>
+      <p class="mb-4">
+        Ensuring Fault Tolerance and Redundancy in Your Infrastructure
+      </p>
       <div class="flex flex-wrap gap-2">
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">haproxy</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Linux</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">DevOps</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Webserver</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Load Balancing</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">haproxy</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">Linux</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">DevOps</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">Webserver</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">Load Balancing</span>
       </div>
     </div>
 
-    <!-- Project 2 -->
-    <div class="w-full max-w-xs border rounded-xl p-6 flex flex-col justify-between">
-      <div>
-        <h3 class="text-xl font-semibold mb-2">
-          How to Secure SSH? <span class="text-green-500 text-2xl leading-none align-top">•</span>
-        </h3>
-        <p class="text-gray-600 mb-4">Secure Shell to establish secure connections to distant systems through protocol.</p>
-      </div>
+    <!-- Card 2 -->
+    <div class="border border-gray-200 rounded-xl p-5">
+      <h3 class="text-lg font-semibold mb-2">
+        How to Secure SSH? 
+        <span class="text-green-500">•</span>
+      </h3>
+      <p class="mb-4">
+        Secure Shell to establish secure connections to distant systems through protocol.
+      </p>
       <div class="flex flex-wrap gap-2">
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">DevOps</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Security</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Authentication</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Authorization</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">ssh</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">DevOps</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">Security</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">Authentication</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">Authorization</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">ssh</span>
       </div>
     </div>
-
-    <!-- Project 3 -->
-    <div class="w-full max-w-xs border rounded-xl p-6 flex flex-col justify-between">
-      <div>
-        <h3 class="text-xl font-semibold mb-2">
-          Terraform S3 Hosting <span class="text-green-500 text-2xl leading-none align-top">•</span> 
-          <i class="fab fa-github text-gray-600"></i>
-        </h3>
-        <p class="text-gray-600 mb-4">Hosting a Static Website on AWS S3 using Terraform</p>
-      </div>
+    
+    <!-- Card 3 -->
+    <div class="border border-gray-200 rounded-xl p-5">
+      <h3 class="text-lg font-semibold mb-2">
+        Terraform S3 Hosting 
+        <span class="text-green-500">•</span>
+        <i class="fab fa-github"></i>
+      </h3>
+      <p class="mb-4">
+        Hosting a Static Website on AWS S3 using Terraform
+      </p>
       <div class="flex flex-wrap gap-2">
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">AWS</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">S3</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Terraform</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">IAAC</span>
-      </div>
-    </div>
-
-    <!-- Project 4 -->
-    <div class="w-full max-w-xs border rounded-xl p-6 flex flex-col justify-between">
-      <div>
-        <h3 class="text-xl font-semibold mb-2">
-          Helm <i class="fab fa-github text-gray-600"></i>
-        </h3>
-        <p class="text-gray-600 mb-4">Kubernetes package manager that makes packaging, configuring, and deploying apps easy.</p>
-      </div>
-      <div class="flex flex-wrap gap-2">
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Kubernetes</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Helm</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">DevOps</span>
-      </div>
-    </div>
-
-    <!-- Project 5 -->
-    <div class="w-full max-w-xs border rounded-xl p-6 flex flex-col justify-between">
-      <div>
-        <h3 class="text-xl font-semibold mb-2">
-          ProxySQL <span class="text-green-500 text-2xl leading-none align-top">•</span>
-        </h3>
-        <p class="text-gray-600 mb-4">Load Balancing MySQL servers using ProxySQL</p>
-      </div>
-      <div class="flex flex-wrap gap-2">
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">MySQL</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Proxy</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Database</span>
-      </div>
-    </div>
-
-    <!-- Project 6 -->
-    <div class="w-full max-w-xs border rounded-xl p-6 flex flex-col justify-between">
-      <div>
-        <h3 class="text-xl font-semibold mb-2">
-          Getting Started with Istio Service Mesh <i class="fab fa-github text-gray-600"></i>
-        </h3>
-        <p class="text-gray-600 mb-4">Configurable, open source service-mesh layer that connects, monitors, and secures Kubernetes.</p>
-      </div>
-      <div class="flex flex-wrap gap-2">
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Istio</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">DevOps</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Kubernetes</span>
-        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Mesh</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">AWS</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">S3</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">Terraform</span>
+        <span class="bg-gray-100 px-2 py-1 rounded">IAAC</span>
       </div>
     </div>
 
   </div>
 </section>
+
 
 <!-- Skills Section -->
 <section id="skills" class="min-h-[50vh] px-8 py-16">
